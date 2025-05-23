@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>دستیار خاکشناس </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts - Vazir -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="mic.png">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+    h1 { color: #333; }
+    /* حذف @font-face های B Traffic */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #2e7d32;
+        color: white;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .underheader{color: #74716e ;}
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .menu ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* دکمه‌های ساده منو بالا */
+.menu ul li a.top-nav-btn {
+    background: #f5f5f5;
+    color: #2e7d32;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    margin: 0 0.2rem;
+    box-shadow: none;
+    transition: background 0.25s, color 0.25s;
+    font-weight: 500;
+    display: inline-block;
+}
+.menu ul li a.top-nav-btn:hover,
+.menu ul li a.top-nav-btn:focus {
+    background: #e0e0e0;
+    color: #ff9800;
+}
+.menu ul li {
+    margin: 0;
+    padding: 0;
+}
+.menu ul {
+    gap: 0.5rem;
+}
+
+    .menu ul li a {
+        position: relative;
+padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+margin: 0 0.3rem;
+color: #fff;
+background: transparent;
+border: none;
+border-radius: 18px 0 0 0;
+font-weight: 500;
+box-shadow: 0 2px 8px rgba(44,125,50,0.07);
+transition: color 0.3s, box-shadow 0.3s;
+z-index: 1;
+overflow: visible;
+    }
+
+    .menu ul li a::before,
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    background: #43a047;
+    transition: background 0.3s;
+}
+.menu ul li a::before {
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    border-radius: 40px 0 0 0;
+}
+.menu ul li a::after {
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    border-radius: 40px 0 0 0;
+}
+.menu ul li a:hover::before,
+.menu ul li a:hover::after {
+    background: #ff9800;
+}
+.menu ul li a:hover {
+    color: #ff9800;
+    box-shadow: 0 4px 16px rgba(255,152,0,0.10);
+}
+
+    .menu a {
+        color: white;
+        transition: opacity 0.3s ease;
+    }
+
+    .menu a:hover {
+        opacity: 0.8;
+    }
+
+    #toggleMenu {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+        background: url('10e.jpg') no-repeat center center/cover;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 2rem;
+        animation: fadeIn 1s ease-in-out;
+        border-radius: 48px; /* گوشه‌های نرم و زیاد */
+        margin: 2rem auto 0 auto; /* فاصله از بالا و کناره‌ها */
+        max-width: 1100px; /* عرض محدود برای مستطیل */
+        box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18); /* سایه ملایم */
+        overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا */
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        background: #388e3c;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        margin: 0 0.3rem;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(44,125,50,0.07);
+    }
+
+    .btn:hover {
+        background: #2e7d32;
+        color: #ff9800;
+    }
+
+    /* Tabs */
+    .tab-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .tab-btn {
+        padding: 1rem 2rem;
+        background: #e0e0e0;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+        background: #2e7d32;
+        color: white;
+    }
+
+    .tab-content {
+        display: none;
+        padding: 2rem;
+        background: white;
+        margin: 1rem auto;
+        max-width: 900px;
+        border-radius: 10px;
+        animation: slideUp 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* Educational Article inside Tabs */
+    .article {
+        background: #fff5e4;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+        border-right: 4px solid #ff9800;
+    }
+
+    .calculate-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        background: #ff9800;
+        color: white;
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .calculate-btn:hover {
+        background: #f57c00;
+    }
+
+    /* About Section */
+    #about {
+        padding: 2rem;
+        text-align: center;
+        background: #fff;
+        margin-top: 2rem;
+    }
+
+    /* Section: مطالب سایت */
+#site-articles {
+    padding: 2rem 0;
+}
+
+.articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.article-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.13);
+    padding: 2.5rem 2rem;
+    min-height: 140px;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.3s;
+}
+
+.article-card:hover {
+    box-shadow: 0 12px 32px rgba(255,152,0,0.15);
+}
+
+.article-title {
+    margin-bottom: 1rem;
+    color: #2e7d32;
+    font-size: 1.25rem;
+    font-weight: bold;
+    outline: none;
+}
+
+.article-text {
+    color: #444;
+    font-size: 1rem;
+    outline: none;
+}
+
+.article-list {
+    margin: 0 0 1rem 0;
+    padding-right: 1.2rem;
+    color: #444;
+    font-size: 1rem;
+    line-height: 2;
+    text-align: right;
+    list-style: disc inside;
+}
+.article-text-title {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+    .articles-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    /* Footer */
+    footer {
+        background: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    /* حالت ساده و قبلی برای آیکون‌های شبکه اجتماعی */
+.social-icons-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #fff; */ /* این خط را حذف یا کامنت کن */
+    border-radius: 18px;
+    padding: 0.5rem 1.2rem;
+    box-shadow: none; /* سایه را هم حذف کن اگر نمی‌خواهی */
+    margin: 1.2rem auto 0 auto;
+    min-width: 120px;
+    max-width: 300px;
+    width: fit-content;
+    height: 44px;
+    gap: 0.2rem;
+    animation: fadeIn 1s;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+footer a img {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 8px !important;
+    border-radius: 50%;
+    background: none;
+    box-shadow: none;
+    transition: transform 0.25s;
+    padding: 0;
+}
+footer a img:hover {
+    transform: scale(1.12) rotate(-6deg);
+    background: none !important; /* حذف پس‌زمینه سفید هنگام هاور */
+}
+@media (max-width: 600px) {
+    .social-icons-bg {
+        padding: 0.18rem 0.5rem;
+        min-width: 80px;
+        max-width: 90vw;
+        height: 32px;
+        border-radius: 12px;
+    }
+    footer a img {
+        width: 20px !important;
+        height: 20px !important;
+        margin: 0 2px !important;
+    }
+}
+
+/* Animations */
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+        from {transform: translateY(20px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+
+    @keyframes slideDown {
+        from {transform: translateY(-30px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .menu ul {
+            flex-direction: column;
+            display: none;
+            background: #2e7d32;
+            position: absolute;
+            top: 60px;
+            left:0;
+            
+          
+            width: 200px;
+            z-index: 1001;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 8px 24px #2e7d3233;
+            animation: slideDown 0.4s;
+        }
+        .menu ul.show {
+            display: flex;
+        }
+        #toggleMenu {
+            display: block;
+            position: absolute;
+            left: 1rem;
+            top: 1.1rem;
+            z-index: 1100;
+        }
+    }
+
+    /* Mini Nav - Modern & Extra Small */
+.mini-nav {
+    display: flex;
+    gap: 0.15rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mini-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    background: #fff;
+    color: #2e7d32;
+    border-radius: 7px;
+    padding: 0.13rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;
+    min-width: 0;
+    min-height: 22px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.18s, color 0.18s;
+}
+.mini-nav-btn i {
+    font-size: 0.95em;
+    margin-left: 0.15em;
+}
+.mini-nav-btn:hover, .mini-nav-btn:focus {
+    background: #e0f2f1;
+    color: #ff9800;
+}
+.mini-nav li {
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 600px) {
+    .mini-nav-btn {
+        font-size: 0.7rem;
+        padding: 0.09rem 0.35rem;
+    }
+}
+
+.tab-btn i {
+            margin-left: 0.5em;
+            color: #388e3c;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        .tab-btn.active i {
+            color: #fff;
+        }
+        .tab-btn:focus {
+            outline: 2px solid #ff9800;
+        }
+        .tab-content {
+            min-height: 180px;
+        }
+        .tab-btn[aria-selected="true"] {
+            box-shadow: 0 2px 12px #43a04733;
+        }
+        /* بهبود اسکرول نرم برای کل سایت */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* رفع باگ نمایش منو موبایل */
+        @media (max-width: 768px) {
+            .menu ul {
+                position: absolute;
+                right: 0;
+                top: 60px;
+                background: #2e7d32;
+                width: 200px;
+                z-index: 1001;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#" id="logo-link" style="text-decoration:none; color:inherit;">
+                <img src="mic.png" alt="آیکون" style="width:32px; height:32px; vertical-align:middle; margin-left:8px;">
+                دستیار خاکشناس
+            </a>
+        </div>
+        <nav class="menu">
+            <button id="toggleMenu" aria-label="باز کردن منو"><i class="fas fa-bars"></i></button>
+            <ul id="navMenu" class="mini-nav">
+    <li>
+        <a href="#tabs" class="mini-nav-btn" onclick="smoothScroll(event)">
+            <i class="fas fa-flask"></i>
+            <span>آزمایشات</span>
+        </a>
+    </li>
+    <li>
+        <a href="#ai-assistant" class="mini-nav-btn" onclick="smoothScroll(event)">
+            <i class="fas fa-robot"></i>
+            <span>دستیار هوشمند</span>
+        </a>
+    </li>
+    <li>
+        <a href="#about" class="mini-nav-btn" onclick="smoothScroll(event)">
+            <i class="fas fa-users"></i>
+            <span>درباره ما</span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </header>
+
+    
+    <!-- Hero -->
+<section class="hero">
+    <h1><i class="fas fa-seedling" style="color:#ff9800;"></i> خوش آمدید به دستیار خاکشناس </h1>
+    <p class="underheader"><i class="fas fa-leaf"></i> محاسبه و تحلیل دقیق آزمایشات خاک</p>
+    <div class="button-group" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 20px;">
+        <a href="#tabs" class="btn" onclick="smoothScroll(event)"><i class="fas fa-flask"></i> آزمایشات خاک</a>
+        <a href="Soil Analysis.html" class="btn"><i class="fas fa-vial"></i> آنالیز خاک</a>
+        <a href="Crop Recommendation.html" class="btn"><i class="fas fa-lightbulb"></i> پیشنهاد محصول</a>
+        <a href="Crops Information Database.html" class="btn"><i class="fas fa-database"></i> بانک محصولات</a>
+        <a href="Financial Managment.html" class="btn"><i class="fas fa-coins"></i> مدیریت مالی</a>
+        <a href="Greenhouse Assistant.html" class="btn"><i class="fas fa-seedling"></i> دستیار گلخانه</a>
+        <a href="Pest Manegment.htm" class="btn"><i class="fas fa-bug"></i> مدیریت آفات</a>
+        <a href="Warer Manegmant.html" class="btn"><i class="fas fa-tint"></i> مدیریت آب</a>
+        <a href="Fertilizer Management.html" class="btn"><i class="fas fa-tractor"></i> مدیریت کوددهی</a>
+    </div>
+</section>
+
+<!-- Add smooth scroll behavior with JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Tabs
+    window.openTab = function(evt, tabName) {
+        const tabs = document.querySelectorAll(".tab-content");
+        const btns = document.querySelectorAll(".tab-btn");
+        tabs.forEach(tab => tab.classList.remove("active"));
+        btns.forEach(btn => {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-selected", "false");
+        });
+        const tab = document.getElementById(tabName);
+        if (tab) tab.classList.add("active");
+        if (evt && evt.currentTarget) {
+            evt.currentTarget.classList.add("active");
+            evt.currentTarget.setAttribute("aria-selected", "true");
+        }
+    };
+
+    // Toggle Menu for mobile
+    const toggleMenuBtn = document.getElementById("toggleMenu");
+    const navMenu = document.getElementById("navMenu");
+    if (toggleMenuBtn && navMenu) {
+        toggleMenuBtn.addEventListener("click", function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle("show");
+        });
+        // بستن منو با کلیک بیرون
+        document.addEventListener("click", function(e) {
+            if (!navMenu.contains(e.target) && e.target !== toggleMenuBtn) {
+                navMenu.classList.remove("show");
+            }
+        });
+        // بستن منو بعد از انتخاب آیتم
+        navMenu.querySelectorAll('.mini-nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                navMenu.classList.remove("show");
+            });
+        });
+    }
+
+    // Smooth scroll
+    window.smoothScroll = function(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        const header = document.querySelector('header');
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - (header ? header.offsetHeight : 0),
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // افکت حرکت متن خوش آمدید با موس
+    const hero = document.querySelector('.hero');
+    const heroTitle = hero ? hero.querySelector('h1') : null;
+    if (hero && heroTitle) {
+        hero.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const percentX = (x / rect.width - 0.5) * 2;
+            const percentY = (y / rect.height - 0.5) * 2;
+            heroTitle.style.transform = `translate(${percentX * 7}px, ${percentY * 7}px)`;
+        });
+        hero.addEventListener('mouseleave', function() {
+            heroTitle.style.transform = 'translate(0,0)';
+        });
+    }
+});
+</script>
+
+    <!-- Tabs Section -->
+    <section id="tabs">
+        <h2 style="text-align:center; margin: 2rem;"><i class="fas fa-flask"></i> آزمایشات خاک</h2>
+        <div class="tab-container" role="tablist">
+            <button class="tab-btn active" onclick="openTab(event, 'baf')" aria-selected="true" role="tab"><i class="fas fa-layer-group"></i> بافت خاک</button>
+            <button class="tab-btn" onclick="openTab(event, 'density')" aria-selected="false" role="tab"><i class="fas fa-balance-scale"></i> جرم مخصوص</button>
+            <button class="tab-btn" onclick="openTab(event, 'lime')" aria-selected="false" role="tab"><i class="fas fa-cube"></i> مقدار آهک</button>
+            <button class="tab-btn" onclick="openTab(event, 'organic')" aria-selected="false" role="tab"><i class="fas fa-leaf"></i> برآورد آلی</button>
+            <button class="tab-btn" onclick="openTab(event, 'saturation')" aria-selected="false" role="tab"><i class="fas fa-tint"></i> نقطه اشباع</button>
+            <button class="tab-btn" onclick="openTab(event, 'ec')" aria-selected="false" role="tab"><i class="fas fa-bolt"></i> هدایت الکتریکی</button>
+            <button class="tab-btn" onclick="openTab(event, 'ph')" aria-selected="false" role="tab"><i class="fas fa-vial"></i> واکنش شیمیایی</button>
+            <button class="tab-btn" onclick="openTab(event, 'na-k')" aria-selected="false" role="tab"><i class="fas fa-atom"></i> سدیم و پتاسیم</button>
+            <button class="tab-btn" onclick="openTab(event, 'mg-ca')" aria-selected="false" role="tab"><i class="fas fa-flask"></i> منیزیم و کلسیم</button>
+            <button class="tab-btn" onclick="openTab(event, 'anions')" aria-selected="false" role="tab"><i class="fas fa-water"></i> آنیون‌ها</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="baf">
+            <h2>بافت خاک (Soil Texture)</h2>
+            <p>بافت خاک به معنای نسبت ذرات شن، سیلت و رس در خاک است. این تست به شما کمک می‌کند نوع خاک را تشخیص دهید.</p>
+            <ol>
+                <li>نمونه خاک را خشک و الک کنید</li>
+                <li>محلول پراکنده کننده اضافه کنید</li>
+                <li>با هیدرومتر در زمان‌های مشخص قرائت بگیرید</li>
+                <li>محاسبه درصد شن، سیلت و رس</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>بافت خاک تأثیر زیادی بر ظرفیت نگهداری آب و عناصر غذایی دارد. خاک‌های رسی آب بیشتری نگه می‌دارند، در حالی که خاک‌های شنی زهکشی بهتری دارند.</p>
+                <a href="soiltexture.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="density">
+            <h2>جرم مخصوص (Bulk Density)</h2>
+            <p>جرم مخصوص خاک، جرم واحد حجم خاک بدون آب است. این مقدار نقش مهمی در محاسبات کشاورزی دارد.</p>
+            <ol>
+                <li>استوانه را وزن کنید</li>
+                <li>خاک را داخل استوانه فشرده کنید</li>
+                <li>خاک را خشک کنید و دوباره وزن کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">فرمول:</h3>
+                <p class="text-xl font-mono">BD = Wd / Vc</p>
+                <p>Wd = وزن خاک خشک</p>
+                <p>Vc = حجم استوانه</p>
+                <a href="density.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="lime">
+            <h2>مقدار آهک (Lime Content)</h2>
+            <p>مقدار آهک در خاک برای تعیین pH و خنثی کردن خاک‌های اسیدی بسیار مهم است.</p>
+            <ol>
+                <li>نمونه خاک را تیمار کنید</li>
+                <li>با محلول HCl واکنش دهید</li>
+                <li>مقدار CO₂ آزاد شده را اندازه‌گیری کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>مقدار آهک مناسب به نوع خاک و pH مورد نظر بستگی دارد. برای خاک‌های اسیدی، معمولاً 1 تا 3 تن در هکتار آهک توصیه می‌شود.</p>
+                <a href="CaCO3.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="organic">
+            <h2>برآورد ماده آلی (Organic Matter)</h2>
+            <p>ماده آلی خاک به عنوان یکی از شاخص‌های کیفیت خاک محسوب می‌شود.</p>
+            <ol>
+                <li>نمونه خاک را با محلول سولفات پتاسیم اکسید کنید</li>
+                <li>با دی کرومات سدیم واکنش دهید</li>
+                <li>از طریق تیتراسیون مقدار آلی را بدست آورید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">آموزش:</h3>
+                <p>در روش Walkley-Black، ماده آلی خاک با دی کرومات پتاسیم در محیط اسیدی واکنش می‌دهد و مقدار کربن آلی تعیین می‌شود.</p>
+                <a href="OrganicMater.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="saturation">
+            <h2>نقطه اشباع (Saturation Point)</h2>
+            <p>نقطه اشباع خاک، زمانی است که تمام منافذ خاک پر از آب شده‌اند.</p>
+            <ol>
+                <li>نمونه خاک را در یک استوانه قرار دهید</li>
+                <li>آب را به آرامی روی خاک بریزید</li>
+                <li>زمانی که آب از پایین استوانه شروع به خروج کند، ثبت کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>این آزمایش به تعیین ظرفیت زهکشی خاک کمک می‌کند و در مدیریت آبیاری بسیار مفید است.</p>
+                <a href="SP.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="ec">
+            <h2>هدایت الکتریکی (Electrical Conductivity)</h2>
+            <p>این آزمایش مقدار نمک‌های محلول در خاک را مشخص می‌کند.</p>
+            <ol>
+                <li>نمونه خاک را با آب مقطر مخلوط کنید</li>
+                <li>از طریق دستگاه EC مقدار هدایت را بخوانید</li>
+                <li>نتیجه را در واحد dS/m گزارش کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>EC بالای 4 dS/m نشانه خاک شور است و ممکن است برای گیاهان مضر باشد.</p>
+                <a href="EC&PH.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="ph">
+            <h2>واکنش شیمیایی (pH)</h2>
+            <p>pH خاک تأثیر مستقیم بر دسترسی گیاه به عناصر غذایی دارد.</p>
+            <ol>
+                <li>نمونه خاک را با آب مقطر مخلوط کنید</li>
+                <li>دستگاه pH متر را کالیبره کنید</li>
+                <li>مقدار pH را اندازه‌گیری کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>pH مناسب برای بیشتر گیاهان بین 6 تا 7.5 است. خاک‌های اسیدی ممکن است نیاز به آهک داشته باشند.</p>
+                <a href="EC&PH.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="na-k">
+            <h2>سدیم و پتاسیم (Na & K)</h2>
+            <p>این عناصر نقش مهمی در تغذیه گیاهان دارند و باید به صورت دقیق اندازه‌گیری شوند.</p>
+            <ol>
+                <li>نمونه خاک را با محلول استخراج کننده مخلوط کنید</li>
+                <li>با دستگاه فلیم‌فوتومتر مقدار Na و K را بخوانید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>پتاسیم برای رشد ریشه و مقاومت گیاه ضروری است. سدیم بالا ممکن است خاک را شور کند.</p>
+                <a href="K&Na.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="mg-ca">
+            <h2>منیزیم و کلسیم (Mg & Ca)</h2>
+            <p>منیزیم و کلسیم از عناصر ضروری برای رشد گیاهان هستند.</p>
+            <ol>
+                <li>نمونه خاک را با محلول استخراج کننده مخلوط کنید</li>
+                <li>با دستگاه AAS مقدار Mg و Ca را اندازه‌گیری کنید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>کلسیم برای ساختار خاک و منیزیم برای فتوسنتز ضروری است. عدم تعادل این عناصر می‌تواند مشکلاتی ایجاد کند.</p>
+                <a href="ca&mg.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+
+        <div class="tab-content" id="anions">
+            <h2>آنیون‌ها (CO₃، HCO₃، Cl)</h2>
+            <p>آنیون‌ها اثر زیادی در شوری و سختی خاک دارند.</p>
+            <ol>
+                <li>نمونه خاک را با آب مقطر مخلوط کنید</li>
+                <li>با روش تیتراسیون مقدار کربنات و بی‌کربنات را اندازه‌گیری کنید</li>
+                <li>با نیترات نقره مقدار کلر را بدست آورید</li>
+            </ol>
+            <div class="article">
+                <h3 style="color: #f57c00;">نکته:</h3>
+                <p>کلر بالا می‌تواند برای برخی گیاهان مضر باشد. بی‌کربنات ممکن است موجب سختی آب شود.</p>
+                <a href="CO3&HCO3&Cl.html" class="calculate-btn">محاسبات</a>
+            </div>
+        </div>
+    
+    </section>
+
+     <!-- دستیار هوشمند -->
+<section id="ai-assistant" style="padding: 3rem 0 2rem 0;">
+    <div style="background: #fff; border-radius: 18px; box-shadow: 0 6px 24px rgba(44,62,80,0.13); max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; text-align: center; animation: fadeIn 1s;">
+        <h2 style="color:#2e7d32; margin-bottom:1.5rem;">دستیارهای هوشمند خاک‌شناس</h2>
+        <p style="color:#444; font-size:1.1rem; margin-bottom:1.2rem;">
+            به کمک این دستیارها، دیگر لازم نیست نگران پیچیدگی داده‌های کشاورزی و خاک‌شناسی باشی! هر ابزار برای یک کار تخصصی طراحی شده تا:
+        </p>
+        <ul style="text-align:right; display:inline-block; margin:0 auto 1.5rem auto; padding:0 1rem; color:#444; font-size:1.05rem; line-height:2;">
+            <li>آنالیز خاک را در چند ثانیه انجام بدهی</li>
+            <li>محصول مناسب زمینت را بدون دردسر پیدا کنی</li>
+            <li>بانک محصولات، همه اطلاعات محصول‌ها را دم دست داشته باشی</li>
+            <li>مدیریت مالی مزرعه‌ات را شفاف و به‌روز نگه داری</li>
+            <li>دستیار گلخانه شرایط رشد گل‌ها و سبزیجاتت را کنترل کند</li>
+            <li>مدیریت آفات، آفت‌ها را سریع شناسایی و کنترل کند</li>
+            <li>مدیریت آب، مصرف آب را بهینه و هزینه‌ها را کاهش دهد</li>
+            <li>آقای طاها مهدوی پسر خوبی است.</li>
+        </ul>
+        <p style="color:#666; font-size:1rem;">
+            هر کدام از این دستیارها با رابط کاربری ساده و چابک، تجربه‌ای دوستانه و کارآمد برایت ایجاد می‌کنند؛ کافیست وارد شوی و شروع کنی!
+        </p>
+    </div>
+</section>
+
+    <!-- Section: مطالب سایت -->
+<section id="site-articles" style="padding: 2rem 0;">
+    <h2 style="text-align:center; margin-bottom:2rem; color:#2e7d32;">میخوای بدونی دستیار ها چیکار میکنن &#x21;</h2>
+    <div class="articles-grid">
+        <div class="article-card">
+            <h3 class="article-title">آنالیز خاک</h3>
+            <ul class="article-list">
+                <li>با اطلاعات ساده، تحلیل عمیق خاکت رو به‌دست بیار!</li>
+                <li>کافیست درصد شن، سیلت و رس، جرم مخصوص ظاهری، درصد اشباع، EC و pH عصاره را وارد کنی.</li>
+            </ul>
+            <p class="article-text-title">ما:</p>
+            <ul class="article-list">
+                <li>یک نمودار شفاف از بافت خاکت می‌سازیم</li>
+                <li>شاخص شوری و سدیم را حساب می‌کنیم</li>
+                <li>درصد آهک و ماده‌ی آلی را گزارش می‌کنیم</li>
+                <li>نکات ساده برای اصلاح خاکت پیشنهاد می‌کنیم</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">پیشنهاد محصول</h3>
+            <ul class="article-list">
+                <li>محصول ایده‌آل زمینت را پیدا کن!</li>
+                <li>کافیست پارامترهای اقلیمی و خاکی—مثل دمای کمینه/بیشینه، بارندگی، pH، بافت خاک و فصل کاشت—را وارد کنی.</li>
+            </ul>
+            <p class="article-text-title">ما:</p>
+            <ul class="article-list">
+                <li>یک لیست کوتاه از محصولات مناسب و پربازده بهت می‌دهیم</li>
+                <li>برای هر محصول دوره رشد، نیاز آب و کود، ارقام پیشنهادی و جزئیات دیگر را می‌نویسیم</li>
+                <li>می‌توانی حالت پیشرفته را باز کنی و دقیق‌تر جست‌وجو کنی</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">بانک محصولات</h3>
+            <ul class="article-list">
+                <li>همه چیز درباره محصولات کشاورزی زیر دستته!</li>
+                <li>از غلات تا سبزی‌جات:</li>
+                <li>اقلیم مناسب و دوره رشد</li>
+                <li>نیاز آبی، کودی و دمایی</li>
+                <li>شوری قابل تحمل و آفات مهم</li>
+                <li>عملکرد تقریبی در سطوح مختلف</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">مدیریت مالی</h3>
+            <ul class="article-list">
+                <li>حساب‌کتاب مزرعت را مرتب کن!</li>
+                <li>یک داشبورد مالی ساده و کاربردی:</li>
+                <li>وضعیت سود/زیان و جریان نقدی</li>
+                <li>ثبت هزینه و درآمد با انتخاب محصول مرتبط</li>
+                <li>گزارش‌های ماهانه و تقویم یادآوری</li>
+                <li>انبار و موجودی‌ها را هم زیر نظر داشته باش</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">دستیار گلخانه</h3>
+            <ul class="article-list">
+                <li>گلخانه‌ات را هوشمندانه مدیریت کن!</li>
+                <li>فقط تنظیمات را بده تا:</li>
+                <li>دما، رطوبت و نور را روی مقدار دلخواه بذاریم</li>
+                <li>آبیاری را زمان‌بندی کنیم</li>
+                <li>کشت، آفات و کوددهی را ثبت و گزارش‌گیری کنیم</li>
+                <li>تاریخچه‌ی همه کارها دم دستت باشد</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">مدیریت آفات</h3>
+            <ul class="article-list">
+                <li>آفت‌ها را زود شناسایی و کنترل کن!</li>
+                <li>سریع گزارش کن:</li>
+                <li>محصول و منطقه</li>
+                <li>علائم یا عکس آفت</li>
+                <li>شدت آلودگی</li>
+            </ul>
+            <p class="article-text-title">ما:</p>
+            <ul class="article-list">
+                <li>پیشنهاد سم و زمان سم‌پاشی می‌دهیم</li>
+                <li>همه گزارش‌ها را آرشیو می‌کنیم تا روند آفت را ببینی</li>
+            </ul>
+        </div>
+        <div class="article-card">
+            <h3 class="article-title">مدیریت آب</h3>
+            <ul class="article-list">
+                <li>آب را بهینه مصرف کن و هزینه‌ها را کم کن!</li>
+                <li>اطلاعات مزرعه (مساحت، ضخامت خاک، محصول و…) را بده تا:</li>
+                <li>ET₀ و نیاز آبی روزانه را حساب کنیم</li>
+                <li>راندمان آبیاری و مقدار بارش را لحاظ کنیم</li>
+                <li>شوری آب و سیستم مناسب را مشخص کنیم</li>
+                <li>سوابق محاسبه‌ها ذخیره شوند تا همیشه دستت باشد</li>
+            </ul>
+        
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>این وبسایت توسط امید رحمانی و محسن نوذری از دانشگاه تهران - گروه علوم و مهندسی خاک طراحی شده است.</p>
+        <p>هدف ما ارائه ابزاری ساده و جامع برای کشاورزان و مهندسان خاک است تا بهره‌وری خاک خود را بهینه کنند.</p>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer>
+        <p>© تمام حقوق محفوظ است - امید رحمانی و محسن نوذری - دانشگاه تهران</p>
+        <div class="social-icons-bg">
+            <a href="https://t.me/yourchannel" target="_blank" title="تلگرام">
+                <img src="tele.png" alt="تلگرام" style="width:32px; margin:0 8px;">
+            </a>
+            <a href="https://www.aparat.com/yourchannel" target="_blank" title="آپارات">
+                <img src="aparat.png" alt="آپارات" style="width:32px; margin:0 8px;">
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="لینکدین">
+                <img src="linkin.png" alt="لینکدین" style="width:32px; margin:0 8px;">
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function openTab(evt, tabName) {
+            const tabs = document.querySelectorAll(".tab-content");
+            const btns = document.querySelectorAll(".tab-btn");
+
+            tabs.forEach(tab => tab.classList.remove("active"));
+            btns.forEach(btn => {
+                btn.classList.remove("active");
+                btn.setAttribute("aria-selected", "false");
+            });
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            evt.currentTarget.setAttribute("aria-selected", "true");
+        }
+
+        // Toggle Menu for mobile
+        document.getElementById("toggleMenu").addEventListener("click", () => {
+            document.querySelector("#navMenu").classList.toggle("show");
+        });
+
+        // Smooth scroll
+        function smoothScroll(event) {
+            event.preventDefault();
+            const targetId = event.currentTarget.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // افکت حرکت متن خوش آمدید با موس
+        const heroTitle = document.querySelector('.hero h1');
+        document.querySelector('.hero').addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const percentX = (x / rect.width - 0.5) * 2;
+            const percentY = (y / rect.height - 0.5) * 2;
+            heroTitle.style.transform = `translate(${percentX * 7}px, ${percentY * 7}px)`;
+        });
+        document.querySelector('.hero').addEventListener('mouseleave', function() {
+            heroTitle.style.transform = 'translate(0,0)';
+        });
+
+        // رفع باگ: بستن منو موبایل بعد از انتخاب
+        document.querySelectorAll('.mini-nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector("#navMenu").classList.remove("show");
+            });
+        });
+    </script>
+</body>
+</html>
